@@ -59,8 +59,6 @@ body {
     
 a, a > u { 
 	text-decoration: none; }
-
-a:link    { color: #000; }
-a:visited { color: #ff8000; }
-a:active  { color: #c2dff7; }
+a:link    { color: #ff0080; } 
+a:visited { color: #8000ff; }
 a:hover   { color: #ff0080; }
