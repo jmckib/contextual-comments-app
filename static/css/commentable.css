@@ -1,0 +1,27 @@
+body {
+    background-color: #344fb8;
+}
+
+.text-wrapper {
+    background-color: red;
+}
+
+.commentable-container {
+    margin: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 24px;
+    background-color: white;
+}
+.comment-button {
+    position: absolute;
+    top: 0px;
+    left: -44px;
+    width: 20px;
+    z-index: 999;
+}
+.comment-button:hover {
+    background-color: pink;
+}
+
+.commentable-container h1, h2, h3, p {
+    position: relative;
+}
