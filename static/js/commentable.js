@@ -4,7 +4,7 @@ if (typeof Commentable === "undefined") {
     $(function () {
         Commentable = (function () {
             var CONFIG = {
-                $commentables: $('.commentable-container > *').not('.nocom'),
+                $commentables: $('.commentable-container > p').not('.nocom'),
                 $comment_dialog: $('#comment-form-tabs'),
                 $comment_form: $('#comment-form'),
                 $comment_error_div: $('#comments-error-message'),

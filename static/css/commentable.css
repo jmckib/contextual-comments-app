@@ -1,14 +1,15 @@
 body {
-    background-color: #344fb8;
+    background-color: #798189;
+    font: 14px Ariel;
 }
 
 .text-wrapper {
-    background-color: red;
+    background-color: #cddae8;
 }
 
 .commentable-container {
     margin: 0px 0px 0px 20px;
-    padding: 0px 0px 0px 24px;
+    padding: 20px 20px 20px 24px;
     background-color: white;
 }
 .comment-button {
@@ -19,9 +20,25 @@ body {
     z-index: 999;
 }
 .comment-button:hover {
-    background-color: pink;
+    background-color: #efb114;
 }
 
 .commentable-container h1, h2, h3, p {
     position: relative;
 }
+
+.commentable-container h2 {
+    text-align:center;
+    color:#a9c23d;
+    font-size: 1.2em; 
+    margin: .60em;
+}
+
+.commentable-container h3 {
+    color:#efb114;
+    font-size: 1.1em; 
+    margin: .5em;
+}
+.commentable-container p {
+    word-spacing:0.1em;
+    margin: 10px 0px 10px 0px;}
