@@ -1,6 +1,14 @@
 body {
-    background-color: #798189;
+    background-image: url('../img/bg_image.png');
+    background-repeat: repeat-y;
+    background-position: center;
     font: 14px Arial;
+}
+
+.footer {
+    height: 100px;
+    background-position: top center;
+    background-image: url('../img/bg_footer.png')
 }
 
 .text-wrapper {
