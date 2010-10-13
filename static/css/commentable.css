@@ -1,6 +1,6 @@
 body {
     background-color: #798189;
-    font: 14px Ariel;
+    font: 14px Arial;
 }
 
 .text-wrapper {
@@ -29,7 +29,7 @@ body {
 
 .commentable-container h2 {
     text-align:center;
-    color:#a9c23d;
+    color:#efb114;
     font-size: 1.2em; 
     margin: .60em;
 }
