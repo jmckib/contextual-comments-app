@@ -40,7 +40,7 @@ if (typeof Commentable === "undefined") {
                     var $comment_button = $('<div class="' + CONFIG.comment_btn_cls + '"></div>')
                     $comment_button.css('height', $(this).css('height'));
                     $(this).append($comment_button);
-                    $(this).click(open_dialog_func(index));
+                    $comment_button.click(open_dialog_func(index));
                 });
             };
             return {
