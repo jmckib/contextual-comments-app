@@ -48,14 +48,14 @@
 			<p>
             <textarea name="comment" id="id_comment" tabindex="4" cols="70" rows="10"></textarea> 
           </p>
-          <p>
-          </p>
         </form>
-        <div id="comments-error-message" style="float: left;"></div>
-        <div style="float: right;">
-          <input type="submit" value="Post comment" onclick="return Commentable.submit_comment();"/>
-          <input type="button" value="Cancel" onclick="Commentable.close_dialog()"/>
-        </div>
+		<div id="form-controls">
+        	<div id="comments-error-message" style="float: left;"></div>
+	        <div style="float: right;">
+	          <input type="submit" value="Post comment" onclick="return Commentable.submit_comment();"/>
+	          <input type="button" value="Cancel" onclick="Commentable.close_dialog()"/>
+	        </div>
+		</div>
       </div>
       <!-- <div id="allcomments-tab"> -->
       <!--   <p>Here are some comments!</p> -->
