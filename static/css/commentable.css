@@ -50,3 +50,11 @@ body {
 .commentable-container p {
     word-spacing:0.1em;
     margin: 10px 0px 10px 0px;}
+    
+a, a > u { 
+	text-decoration: none; }
+
+a:link    { color: #000; }
+a:visited { color: #ff8000; }
+a:active  { color: #c2dff7; }
+a:hover   { color: #ff0080; }
