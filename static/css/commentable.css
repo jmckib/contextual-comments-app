@@ -1,12 +1,18 @@
 body {
+    font: 14px Arial;
+    background-image: url('../img/bg_pixel.png');
+}
+
+.wrapper {
     background-image: url('../img/bg_image.png');
     background-repeat: repeat-y;
     background-position: center;
-    font: 14px Arial;
 }
 
 .footer {
-    height: 100px;
+    margin-left: -240px;
+    margin-right: -240px;
+    height: 150px;
     background-position: top center;
     background-image: url('../img/bg_footer.png')
 }
@@ -38,7 +44,7 @@ body {
 .commentable-container h2 {
     text-align:center;
     color:#efb114;
-    font-size: 1.2em; 
+    font-size: 1.2em;
     margin: .60em;
 }
 
