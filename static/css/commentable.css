@@ -41,14 +41,14 @@ body {
     position: relative;
 }
 
-.commentable-container h2 {
+.commentable-container h1 {
     text-align:center;
     color:#000;
     font-size: 1.6em;
     margin: .60em;
 }
 
-.commentable-container h3 {
+.commentable-container h2 {
     color:#900;
     font-size: 1.3em; 
     margin: .5em;
