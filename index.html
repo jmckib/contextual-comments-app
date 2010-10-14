@@ -40,14 +40,19 @@
         <form action="" id="comment-form"> 
           <p> 
             <input type="hidden" name="nodenum" value=""/> 
-            <label for="id_name">Name (required) </label> 
+            <label for="id_name"><b>Name</b> (<i>required</i>) </label> 
 			<p></p>
-            <input style="margin-top: 5px; margin-bottom: 5px;" type="text" name="name" id="id_name" value="" tabindex="1"/> 
+            <input style="margin-top: 1px; margin-bottom: 8px; width: 99%" type="text" name="name" id="id_name" value="" tabindex="1"/> 
           </p> 
           <p> 
-            <label for="id_comment">Comment</label> </p>
+			<label for="id_email"><b>E-mail</b> (<i>required; not displayed</i>) </label> 
+			<p></p>
+            <input style="margin-top: 1px; margin-bottom: 8px; width: 99%" type="text" name="name" id="id_name" value="" tabindex="1"/> 
+          </p> 
+          <p>
+            <label for="id_comment"><b>Comment</b></label> </p>
 			<p>
-            <textarea style="margin-top: 5px" name="comment" id="id_comment" tabindex="4" cols="60" rows="10"></textarea> 
+            <textarea style="margin-top: 1px" name="comment" id="id_comment" tabindex="4" cols="60" rows="10"></textarea> 
           </p>
         </form>
 		<div id="form-controls">

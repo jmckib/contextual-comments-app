@@ -62,7 +62,7 @@ if (typeof Commentable === "undefined") {
                 },
                 init: function () {
                     CONFIG.$comment_dialog.tabs();
-                    CONFIG.$comment_dialog.dialog({autoOpen: false, minWidth: 450});
+                    CONFIG.$comment_dialog.dialog({autoOpen: false, minWidth: 430});
                     add_comment_boxes();
                 }
             };
