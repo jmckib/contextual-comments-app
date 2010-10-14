@@ -67,6 +67,10 @@ a:hover   { color: #ff0080; }*/
     margin-top: 5px;
 }
 
+#id_comment {
+  width:99%;
+  height: 130px;
+}
 
 
 
