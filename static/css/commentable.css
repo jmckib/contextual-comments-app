@@ -18,7 +18,7 @@ body {
 }
 
 .text-wrapper {
-    background-color: #c9455a;
+    background-color: #c33;
 }
 
 .commentable-container {
@@ -34,7 +34,7 @@ body {
     z-index: 999;
 }
 .comment-button:hover {
-    background-color: #000;
+    background-color: #e0d2d4;
 }
 
 .commentable-container h1, h2, h3, p {
@@ -49,7 +49,7 @@ body {
 }
 
 .commentable-container h3 {
-    color:#000;
+    color:#900;
     font-size: 1.3em; 
     margin: .5em;
 }
