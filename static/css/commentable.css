@@ -25,7 +25,7 @@ body {
 .commentable-container {
     margin: 0px 0px 0px 20px;
     padding: 20px 20px 20px 24px;
-    background-color: white/*#D9ECFB*/;
+    background-color: white;
 }
 .comment-button {
     position: absolute;
@@ -59,10 +59,12 @@ body {
     margin: 10px 0px 10px 0px;}
     
 a, a > u { 
-	text-decoration: none; }
+	text-decoration: none; 
+}
+
 a:link    { color: #3465A4; } 
 /*a:visited { color: #511ca0; }
-a:hover   { color: #ff0080;*/ }
+a:hover   { color: #ff0080; }*/
 
 #form-controls {
     margin-top: 5px;

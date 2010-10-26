@@ -1,6 +1,13 @@
 <div>
 {% for item in comments %}
-<p>Name: {{ item.username }}</p>
-<p>{{ item.comment }}</p>
+	<p style="color:#3465A4; margin-top: 8px"> <b>{{ item.username }}:</b></p>
+	<p></p>
+	<div style="border: 1px solid #89A6C6; background: #fafdfe; padding: 6px 6px 8px 14px">
+		<p>{{ item.comment }}</p>
+	</div>
+	<p>{{ item.time }}</p>
 {% endfor %}
+
+
+
 </div>
