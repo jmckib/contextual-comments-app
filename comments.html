@@ -1,6 +1,7 @@
 <div>
 {% for item in comments %}
 	<p style="color:#3465A4; margin-top: 8px"> <b>{{ item.username }}:</b></p>
+        <p>{{ item.datetime|date:"F j, Y" }}</p>
 	<p></p>
 	<div style="border: 1px solid #89A6C6; background: #fafdfe; padding: 6px 6px 8px 14px">
 		<p>{{ item.comment }}</p>
