@@ -1,11 +1,10 @@
 <div>
 {% for item in comments %}
-	<p style="color:#3465A4; margin-top: 8px"> <b>{{ item.username }}:</b></p>
-        <p>{{ item.datetime|date:"F j, Y" }}</p>
-	<p></p>
-	<div style="border: 1px solid #89A6C6; background: #fafdfe; padding: 6px 6px 8px 14px">
+	<p style="color:#3465A4; margin-top: 2px"> <b>{{ item.username }}</b></p> 
+	<div style="border: 1px solid #89A6C6; background: white; padding: 6px 6px 8px 14px">
 		<p>{{ item.comment }}</p>
 	</div>
+	<p style="text-align:right; color:#3465A4;"><i>{{ item.datetime|date:"P, N j, Y" }}</i></p>
 	<p>{{ item.time }}</p>
 {% endfor %}
 

@@ -19,7 +19,7 @@ body {
 }
 
 .text-wrapper {
-    background-color: #B0C6D9;
+    background-color: #3465A4;
 }
 
 .commentable-container {
@@ -35,7 +35,7 @@ body {
     z-index: 999;
 }
 .comment-button:hover {
-    background-color: #D9ECFB;
+    background-color: #fbae1e;
 }
 
 .commentable-container h1, h2, h3, p {
@@ -44,13 +44,13 @@ body {
 
 .commentable-container h1 {
     text-align:center;
-    color: #434854;
+    color: #5b3713;
     font-size: 1.6em;
     margin: .60em;
 }
 
 .commentable-container h2 {
-    color:#3465A4;
+    color:#996600;
     font-size: 1.3em; 
     margin: .5em;
 }
@@ -62,7 +62,7 @@ a, a > u {
 	text-decoration: none; 
 }
 
-a:link    { color: #3465A4; } 
+a:link    { color: #50a7f5; } 
 /*a:visited { color: #511ca0; }
 a:hover   { color: #ff0080; }*/
 
