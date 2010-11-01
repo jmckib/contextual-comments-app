@@ -19,7 +19,7 @@ body {
 }
 
 .text-wrapper {
-    background-color: #3465A4;
+    background-color: #618eba;
 }
 
 .commentable-container {
@@ -35,7 +35,7 @@ body {
     z-index: 999;
 }
 .comment-button:hover {
-    background-color: #fbae1e;
+    background-color: #c4d5e6;
 }
 
 .commentable-container h1, h2, h3, p {
@@ -44,13 +44,13 @@ body {
 
 .commentable-container h1 {
     text-align:center;
-    color: #5b3713;
+    color: #61656d;
     font-size: 1.6em;
     margin: .60em;
 }
 
 .commentable-container h2 {
-    color:#996600;
+    color:#618eba;
     font-size: 1.3em; 
     margin: .5em;
 }
@@ -62,7 +62,7 @@ a, a > u {
 	text-decoration: none; 
 }
 
-a:link    { color: #50a7f5; } 
+a:link    { color: #60a0df; } 
 /*a:visited { color: #511ca0; }
 a:hover   { color: #ff0080; }*/
 
@@ -74,7 +74,7 @@ a:hover   { color: #ff0080; }*/
   width:98%;
   height: 130px;
   background:none repeat scroll 0 0 #FFFFFF;
-  border:1px solid #89A6C6;
+  border:1px solid #ced2d8;
   font-size:12px;
   padding:3px;
   margin-bottom: 8px;
@@ -82,7 +82,7 @@ a:hover   { color: #ff0080; }*/
 
 #id_name {
     background:none repeat scroll 0 0 #FFFFFF;
-    border:1px solid #89A6C6;
+    border:1px solid #ced2d8;
     font-size:12px;
     padding:3px;
     margin-top: 1px; 
