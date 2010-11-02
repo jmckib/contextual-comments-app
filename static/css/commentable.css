@@ -19,7 +19,8 @@ body {
 }
 
 .text-wrapper {
-    background-color: #618eba;
+    background-image: url('../img/bg_bg.png');
+    background-color: #5873f1;
 }
 
 .commentable-container {
@@ -35,7 +36,8 @@ body {
     z-index: 999;
 }
 .comment-button:hover {
-    background-color: #c4d5e6;
+    background-image:url('../img/bubble.png');
+    background-color: #c2e1ff;
 }
 
 .commentable-container h1, h2, h3, p {
@@ -44,13 +46,13 @@ body {
 
 .commentable-container h1 {
     text-align:center;
-    color: #61656d;
+    color: #1a1a1a;
     font-size: 1.6em;
     margin: .60em;
 }
 
 .commentable-container h2 {
-    color:#618eba;
+    color:#8790a0;
     font-size: 1.3em; 
     margin: .5em;
 }
@@ -62,7 +64,7 @@ a, a > u {
 	text-decoration: none; 
 }
 
-a:link    { color: #60a0df; } 
+a:link    { font-weight: bold; color: #435dd5; } 
 /*a:visited { color: #511ca0; }
 a:hover   { color: #ff0080; }*/
 
@@ -74,7 +76,7 @@ a:hover   { color: #ff0080; }*/
   width:98%;
   height: 130px;
   background:none repeat scroll 0 0 #FFFFFF;
-  border:1px solid #ced2d8;
+  border:1px solid #c2e1ff;
   font-size:12px;
   padding:3px;
   margin-bottom: 8px;
@@ -82,7 +84,7 @@ a:hover   { color: #ff0080; }*/
 
 #id_name {
     background:none repeat scroll 0 0 #FFFFFF;
-    border:1px solid #ced2d8;
+    border:1px solid #c2e1ff;
     font-size:12px;
     padding:3px;
     margin-top: 1px; 
