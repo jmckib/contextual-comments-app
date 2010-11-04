@@ -94,26 +94,11 @@ AI will provide consistent answers, at least for debugging purposes.
 AI internals
 </h2>
 
-<p>
-In order to explain how our AI will work internally I will need to be more
-specific about one kind of question our AI might attempt to answer, but I
-will show later that the design used here can be applied to many types of
-questions.
-</p>
-
-<p>
-Suppose that there is some uncertain proposition A, and we have collected
-observations from the real world that are somehow related to A (I will be
-more specific about this relationship later).  We would like our AI to tell
-us that A is either true or false.  For example, we might flip a coin 10
-times, and then ask our AI to tell us if the 11th flip will be heads or not.
-</p>
-
 When human beings reason about uncertain propositions, we often attach
 weights or 'levels of belief' to the different propositions under
-consideration.  For example, one might think of the proposition 'it is going
-to rain today' as having more weight than the negation of that statement,
-'it is not going to rain today'.
+consideration.  For example, if there are clouds in the sky one might think
+of the proposition 'it is going to rain today' as having more weight than
+the negation of that statement, 'it is not going to rain today'.
 </p>
 
 <p>
@@ -186,8 +171,8 @@ D3) The assignment of beliefs is compatible with everyday logic.
 <p>
 This is part of our 3rd design principle; the AI must make act in a way that
 agrees with our intuition. For example, if A and A' are equivalent
-propositions then the AI should assign equal levels of beliefe to A and A',
-i.e., B(A | I) = B(A' | I).  There are some other requirements here, but
+propositions then the AI should assign equal levels of belief to A and A',
+so that B(A | I) = B(A' | I).  There are some other requirements here, but
 they are all similarly straightforward, see Kevin van Horn for details.
 </p>
 
@@ -219,9 +204,9 @@ B(A | I) < B(A | I'') < B(A | I')
 </p>
 
 <p>
-D5) There is a strictly increasing function, continuous function F such that
-B(A ^ C | I) = F(B(A | C, D), B(C | I)) for all propositions A and C with
-data D.
+D6) There is a strictly increasing, continuous function F such that
+B(A ^ C | I) = F(B(A | C, I), B(C | I)) for all propositions A and C with
+background information I.
 </p>
 
 <p>
