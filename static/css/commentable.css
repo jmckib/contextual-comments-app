@@ -3,7 +3,7 @@ body {
     line-height: 1.3em;
     background-image: url('../img/bg_pixel.png');
     color: #080000;
-    text-shadow: #fff 0px 1px .5px;
+    text-shadow: 0px 1px white;
 }
 
 .wrapper {
@@ -21,14 +21,14 @@ body {
 }
 
 .text-wrapper {
-    background-image: url('../img/bg_bg.png');
-    background-color: #5873f1;
+    /*background-image: url('../img/bg_bg.png');*/
+    background-color: #791010;
 }
 
 .commentable-container {
     margin: 0px 0px 0px 20px;
     padding: 20px 20px 20px 24px;
-    background-color: #f1f1f1;
+    background-color: #f0f0f0;
 }
 .comment-button {
     position: absolute;
@@ -38,8 +38,9 @@ body {
     z-index: 999;
 }
 .comment-button:hover {
-    background-image:url('../img/bubble.png');
-    background-color: #c2e1ff;
+    /*background-image:url('../img/bubble.png');*/
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
 
 .commentable-container h1, h2, h3, p {
@@ -48,22 +49,24 @@ body {
 
 .commentable-container h1 {
     text-align:left;
-    color: #1a1a1a;
-    font-size: 1.3em;
+    color: #896570;
+    font-size: 1.7em;
     margin: .60em;
-    border-bottom:1px solid #333333;
+    border-bottom:2px solid #1a1a1a;
     padding-bottom: .7em;
-    text-shadow: #fff 0px 1px .5px;
+    text-shadow:  0px -1px black, 0px 1px white;
+    line-height: 110%;
 }
 
 .commentable-container h2 {
     color:#1a1a1a;
-    font-size: 1.3em; 
+    font-size: 1.25em; 
     margin: .5em;
+    padding-top: .5em;
 }
 .commentable-container p {
-    margin: 10px 0px 10px 0px;
-    padding-bottom: 0.5em;
+    /*margin: 10px 40px 10px 40px;*/
+    padding-bottom: 0.9em;
 /*    text-indent:20px;*/
 }
     
@@ -83,7 +86,7 @@ a:hover   { color: #ff0080; }*/
   width:98%;
   height: 130px;
   background:none repeat scroll 0 0 #FFFFFF;
-  border:1px solid #c2e1ff;
+  border:3px solid #6374AB;
   font-size:12px;
   padding:3px;
   margin-bottom: 8px;
@@ -91,7 +94,7 @@ a:hover   { color: #ff0080; }*/
 
 #id_name {
     background:none repeat scroll 0 0 #FFFFFF;
-    border:1px solid #c2e1ff;
+    border:3px solid #6374AB;
     font-size:12px;
     padding:3px;
     margin-top: 1px; 
@@ -99,7 +102,18 @@ a:hover   { color: #ff0080; }*/
     width: 60%
 }
 
+.sp3, #sp3 {
+font-size:11pt;
+position:relative;
+top:-3pt;
+}
 
+li {margin:auto;
+width:80%;
+padding: 3px 10px 3px 10px;
+border: 3px solid #f0f0f0;
+background-color:#d0d0d0;
+}
 
 
 

@@ -8,7 +8,7 @@ Setting up
 </h2>
 
 <p>Drawing conclusions is relatively straightforward when you're sure of what
-you know.  A is true, and A implies B, therefore B is true.  Here A and B are
+you know.  <i>A</i> is true, and <i>A</i> implies <i>B</i>, therefore <i>B</i> is true.  Here <i>A</i> and <i>B</i> are
 <strong>propositions</strong>, statements which are (in principle) either true or false,
 even if we have no way of knowing which of the two they are.
 </p>
@@ -87,7 +87,7 @@ determine the actual mass of Saturn.
 However, there is at least one practical reason to desire consistency;
 debugging our AI will be easier when we know exactly what response to expect
 from it based on a given input.  So although I will not stress the
-importance of constistency, I will mention in passing how we can ensure our
+importance of consistency, I will mention in passing how we can ensure our
 AI will provide consistent answers, at least for debugging purposes.
 </p>
 
@@ -103,18 +103,18 @@ the negation of that statement, "it is not going to rain today".
 </p>
 
 <p>
-This suggests one way to design our AI. Given an uncertain proposition A
-which the AI must decide on and some background information I related to A,
-the AI could assign a real number to A, called B(A | I), which you can
-pronounce "the AI's belief in proposition A given background information I".
-The AI could also assign a real number to the negation of A, -A, which we
-would call B(-A | I).
+This suggests one way to design our AI. Given an uncertain proposition <i>A</i>
+which the AI must decide on and some background information <i>I</i> related to <i>A</i>,
+the AI could assign a real number to <i>A</i>, called <i>B(A | I)</i>, which you can
+pronounce "the AI's belief in proposition <i>A</i> given background information <i>I</i>".
+The AI could also assign a real number to the negation of <i>A, -A</i>, which we
+would call <i>B(-A | I)</i>.
 </p>
 
 <p>
-If B(A | I) >= B(-A | I), then the AI's output will be "A is true", and
-otherwise "A is false".  As you can see, the AI displays a preference for
-the original proposition A when the beliefs are equal. We could just as
+If <i>B(A | I) ≥ B(-A | I)</i>, then the AI's output will be "<i>A</i> is true", and
+otherwise "<i>A</i> is false".  As you can see, the AI displays a preference for
+the original proposition <i>A</i> when the beliefs are equal. We could just as
 easily have had things the other way, but since the AI must make some
 decision we might as well choose one arbitrarily (here you can see the
 consistency issue already beginning to rear its head).
@@ -122,10 +122,10 @@ consistency issue already beginning to rear its head).
 
 <p>
 It is important to understand the following point: the AI's level of belief
-B(A | I) in the proposition A is only a description of the AI's internal
+<i>B(A | I)</i> in the proposition <i>A</i> is only a description of the AI's internal
 state; it has no significance beyond the internals of our AI.  It is not
-a statement about the true nature of the proposition A, nor is it a statement about the long
-term frequency of A being true in repeated trials, whatever that would mean.
+a statement about the true nature of the proposition <i>A</i>, nor is it a statement about the long
+term frequency of <i>A</i> being true in repeated trials, whatever that would mean.
 It is merely a description of the AI's internals; any attempt to attach
 additional significance to it will only result in confusion.
 </p>
@@ -139,20 +139,20 @@ is simple, and it is similar to the way we humans think.
 </p>
 
 <p>
-The only question now is, how will our AI determine B(A | I) in a way that
+The only question now is, how will our AI determine <i>B(A | I)</i> in a way that
 is both simple and agrees with our intuition?  Let's state some other design
 principles for the internals of our AI, starting with the principle just mentioned:
 </p>
 
 <p>
-D1) Given a proposition A and some background information I, the AI will assign a real number
-B(A | I) to A.  This is similar to the way that humans reason about uncertain
+D1) Given a proposition <i>A</i> and some background information <i>I</i>, the AI will assign a real number
+B(A | I) to <i>A</i>.  This is similar to the way that humans reason about uncertain
 propositions.
 </p>
 
 <p>
-D2) There exists some real number T such that B(A | I) <= T for every A and
-I.  If A is known to be true, then the AI should assign B(A | I) = T.
+D2) There exists some real number <i>T</i> such that <i>B(A | I) ≤ T</i> for every <i>A</i> and
+I.  If <i>A</i> is known to be true, then the AI should assign <i>B(A | I) = T</i>.
 </p>
 
 <p>
@@ -167,25 +167,25 @@ D3) The assignment of beliefs is compatible with everyday logic.
 
 <p>
 This is part of our 3rd criterium; the AI must assign beliefs to propositions in a way that
-agrees with our intuition. For example, if A and A' are equivalent
-propositions then the AI should assign equal levels of belief to A and A',
-so that B(A | I) = B(A' | I).  There are some other requirements here, but
+agrees with our intuition. For example, if <i>A</i> and A' are equivalent
+propositions then the AI should assign equal levels of belief to <i>A</i> and <i>A'</i>,
+so that <i>B(A | I) = B(A' | I)</i>.  There are some other requirements here, but
 they are all similarly straightforward, see Kevin van Horn for details.
 </p>
 
 <p>
-D4) There is a nonincreasing function S such that S(B(A | I)) = B(-A | I).
-Define F = S(T).
+D4) There is a nonincreasing function <i>S</i> such that <i>S(B(A | I)) = B(-A | I)</i>.
+Define <i>F = S(T)</i>.
 </p>
 
 <p>
-This also is meant to agree with our intution.  In simple English, it means
+This also is meant to agree with our intuition.  In simple English, it means
 that if some new data causes the AI to assign a higher level of belief to A,
-then it's level of belief in the negation of A should not increase as well.
+then it's level of belief in the negation of <i>A</i> should not increase as well.
 </p>
 
 <p>
-D5) There are no intervals contained in (F,T) that contain belief values
+D5) There are no intervals contained in <i>(F, T)</i> that contain belief values
 which are not possible for our AI to have (the required statement is
 actually somewhat stronger than this, see van Horn for details).
 </p>
@@ -199,15 +199,15 @@ are possible--an awkward assertion in light of everyday experience.
 </p>
 
 <p>
-D6) There is a strictly increasing, continuous function F such that
-B(A ^ C | I) = F(B(A | C, I), B(C | I)) for all propositions A and C with
-background information I.
+D6) There is a strictly increasing, continuous function <i>F</i> such that
+<i>B(A <a id="sp3">C</a> | I) = F(B(A | C, I), B(C | I))</i> for all propositions <i>A</i> and <i>C</i> with
+background information <i>I</i>.
 </p>
 
 <p>
 Once again, the argument for this requirement is that it appeals to our
-common sense.  One's belief in a both A and C should depend on both one's
-belief in C, and one's belief in A given that C is true.  See van Horn for
+common sense.  One's belief in a both <i>A</i> and <i>C</i> should depend on both one's
+belief in C, and one's belief in <i>A</i> given that <i>C</i> is true.  See van Horn for
 further arguments in favor of this requirement.
 </p>
 
@@ -223,66 +223,66 @@ as Cox's Theorem, see van Horn's awesome paper.
 
 <p>
 Without going into the proof, it turns out that that the function B can be
-rescaled so that B(T) = 1 and B(F) = 0, matching the usual mapping of 1 to
+rescaled so that <i>B(T) = 1</i> and <i>B(F) = 0</i>, matching the usual mapping of 1 to
 true propositions, and 0 to false propositions.  It can also be shown that B
 can be formulated so that the following two rules hold:
 </p>
 
 <p>
 <strong>The sum rule</strong>:
-B(-A | I) = 1 - B(A | I)
+<i>B(-A | I) = 1 - B(A | I)</i>
 </p>
 
 <p>
 <strong>The product rule</strong>:
-B(A ^ C | I) = B(A | C, I) B(C | I)
+<i>B(A<a id="sp3">C</a> | I) = B(A | C, I) B(C | I)</i>
 </p>
 
 <p>
-Now if we switch the roles of A and C in the product rule, we have
+Now if we switch the roles of <i>A</i> and <i>C</i> in the product rule, we have
 </p>
 
 <p>
-B(C ^ A | I) = B(C | A, I) B(A | I)
+<i>B(C <a id="sp3">A</a> | I) = B(C | A, I) B(A | I)</i>
 </p>
 
 <p>
-but B(C ^ A | I) = B(A ^ C | I) by D1, since A ^ C and C ^ A are equivalent
+but <i>B(C <a id="sp3">A</a> | I) = B(A <a id="sp3">C</a> | I)</i> by D1, since <i>A <a id="sp3">C</a></i> and <i>C <a id="sp3">A</a></i> are equivalent
 propositions, so we have that
 </p>
 
 <p>
-B(A | C, I) B(C | I) = B(C | A, I) B(A | I)
+<i>B(A | C, I) B(C | I) = B(C | A, I) B(A | I)</i>
 </p>
 
 <p>
-Finally, by dividing both sides by B(C | I), we have the Bayes'-Laplace Rule
+Finally, by dividing both sides by <i>B(C | I)</i>, we have the Bayes'-Laplace Rule
 (traditionally shortened to Bayes' Rule):
 </p>
 
 <p>
 <strong>Bayes' Rule</strong>:
-B(A | C, I) = [ B(C | A, I) B(A | I) ] / B(C | I)
+<i>B(A | C, I) = [ B(C | A, I) B(A | I) ] / B(C | I)</i>
 </p>
 
 <p>
-If we let A be our hypothesis, and C be the data we have collected
+If we let <i>A</i> be our hypothesis, and <i>C</i> be the data we have collected
 concerning the hypothesis, then we can see the true power of Bayes' rule.
 </p>
 
 <p>
-B(hypothesis | data, I) =
-[ B(data | hypothesis, I) B(hypothesis | I) ] / B(data | I)
+<i>B(hypothesis | data, I) = 
+	[ B(data | hypothesis, I) B(hypothesis | I) ] / B(data | I)</i>
 </p>
 
 <p>
-The term B(hypothesis | data, I) is traditionally called the <strong>posterior</strong>,
+The term <i>B(hypothesis | data, I)</i> is traditionally called the <strong>posterior</strong>,
 since it describes our AI's belief in the hypothesis <em>after</em> viewing the
-data.  The term B(data | hypothesis, I) is called the <strong>evidence</strong> or more
+data.  The term <i>B(data | hypothesis, I)</i> is called the <strong>evidence</strong> or more
 traditionally the <strong>likelihood</strong>, it assigns a number to the degree to which the
-hypothesis is supported by the data.  B(hypothesis | I) is the <strong>prior</strong>, it
-shows our AI's belief in the hypothesis <em>before</em> viewing the data.  B(data |
-I) is simply a constant which does not depend on the hypothesis, so it is
+hypothesis is supported by the data.  <i>B(hypothesis | I)</i> is the <strong>prior</strong>, it
+shows our AI's belief in the hypothesis <em>before</em> viewing the data.  <i>B(data |
+I)</i> is simply a constant which does not depend on the hypothesis, so it is
 often ignored since we are usually only interested in choosing a good hypothesis.
 </p>
 
