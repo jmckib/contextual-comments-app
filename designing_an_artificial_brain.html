@@ -24,7 +24,7 @@ allow us to make better decisions.
 <p>Is it possible then, to design an artificial intelligence (an AI) to help us
 reason about uncertain propositions in some sort of optimal way?  In order
 to begin, we would first need to come up with a relatively satisfying
-definition of 'optimal'.  At first one might hope for an AI that
+definition of "optimal".  At first one might hope for an AI that
 that provides some sort of guarantee of the correctness of the answers it provides.  As far
 as I know this hasn't been done (after all, we are dealing
 with <em>uncertain</em> propositions), but there has been progress towards
@@ -54,21 +54,21 @@ every time we ask it a specific question.
 </ol>
 
 <p>
-Of the four of these criteria, the last one, consistency, seems to me the
-least important.  If our AI is not universal it will not be able to provide
-an answer to many of our questions; if it is not simple it will also not be
+Of the four of these criteria, the last one, consistency, is perhaps the
+least important.  If our AI isn't universal it won't be able to provide
+an answer to many of our questions; if isn't simple it also won't be
 able to provide many answers, because it will be too difficult to implement
-and improve upon; and if it doesn't agree with our intuition then the
+and use; and if it doesn't agree with our intuition then the
 answers it does give us will appear absurd or arbitrary.  However, a lack of
 consistency in the answers it gives us doesn't result in any similar
 disadvantage.
 </p>
 
 <p>
-This may seem strange, since normally if we are designing a machine to
+This may seem strange, because normally if we are designing a machine to
 evaluate propositions a lack of consistency is an indication of a
 serious error.  For example, if you had a calculator that gave a different
-answer every time you typed in '2308 * 5982' then (even not knowing the
+answer every time you typed in "2308 * 5982" then (even not knowing the
 answer yourself) you would be able to tell there is something wrong with the
 calculator, since there is only one number equal to 2308 * 5982, and it can
 be determined based on the given data.
@@ -95,26 +95,29 @@ AI will provide consistent answers, at least for debugging purposes.
 AI internals
 </h2>
 
-When human beings reason about uncertain propositions, we often attach
-weights or 'levels of belief' to the different propositions under
+When human beings reason about uncertain propositions, we tend to attach
+weights or "levels of belief" to the different propositions under
 consideration.  For example, if there are clouds in the sky one might think
-of the proposition 'it is going to rain today' as having more weight than
-the negation of that statement, 'it is not going to rain today'.
+of the proposition "it is going to rain today" as having more weight than
+the negation of that statement, "it is not going to rain today".
 </p>
 
 <p>
 This suggests one way to design our AI. Given an uncertain proposition A
-which the AI must decide on and some data I related to A, the AI could attach a real
-number to A, and another real number to the negation of A, -A.  Since this
-idea is inspired by the way humans assign levels of belief to uncertain
-propositions, we will call the first number B(A | I), which you can
-pronounce 'the AI's belief in A given background information I', and the second number B(-A |
-I).  If B(A | I) >= B(-A | I), then the AI's output will be 'A is true', and
-otherwise 'A is false'.  As you can see, the robot displays a preference for
+which the AI must decide on and some background information I related to A,
+the AI could assign a real number to A, called B(A | I), which you can
+pronounce "the AI's belief in proposition A given background information I".
+The AI could also assign a real number to the negation of A, -A, which we
+would call B(-A | I).
+</p>
+
+<p>
+If B(A | I) >= B(-A | I), then the AI's output will be "A is true", and
+otherwise "A is false".  As you can see, the AI displays a preference for
 the original proposition A when the beliefs are equal. We could just as
-easily have had things the other way, but since the robot must make some
+easily have had things the other way, but since the AI must make some
 decision we might as well choose one arbitrarily (here you can see the
-consistency issue already begin to rear its head).
+consistency issue already beginning to rear its head).
 </p>
 
 <p>
@@ -129,8 +132,8 @@ additional significance to it will only result in confusion.
 
 <p>
 It is also worth mentioning that this is not the only way to design such an
-AI; instead of attaching one real number to a given proposition we could
-attach several, or we could imagine some other mechanism which doesn't
+AI; instead of assigning one real number to a given proposition we could
+assign several, or we could imagine some other mechanism which doesn't
 involve numbers at all.  This idea merely suggests itself to us because it
 is simple, and it is similar to the way we humans think.
 </p>
@@ -143,7 +146,7 @@ principles for the internals of our AI, starting with the principle just mention
 
 <p>
 D1) Given a proposition A and some background information I, the AI will assign a real number
-B(A | I).  This is similar to the way that humans reason about uncertain
+B(A | I) to A.  This is similar to the way that humans reason about uncertain
 propositions.
 </p>
 
@@ -182,19 +185,17 @@ then it's level of belief in the negation of A should not increase as well.
 </p>
 
 <p>
-D5) There is no such thing as an 'atom of evidence' for a proposition; that
-is, there are no intervals contained in (F,T) that contain belief values
-which are not possible for our robot to have (this is not technically
-correct, see van Horn for details).
+D5) There are no intervals contained in (F,T) that contain belief values
+which are not possible for our AI to have (the required statement is
+actually somewhat stronger than this, see van Horn for details).
 </p>
 
 <p>
 The primary justification for this requirement is that it appeals to our
 intuition, since we humans do not think of levels of belief as being finite
-and discrete, we think of them as being continuous. It is not natural to
-imagine that given some information I related to A, and some more favorable information I' for
-A, there is not some intermediate level of information I'' that would allow the AI to have
-B(A | I) < B(A | I'') < B(A | I')
+and discrete, we think of them as being continuous.  If we reject D5 then we
+are asserting that there are only finitely many "gradations of belief" that
+are possible--an awkward assertion in light of everyday experience.
 </p>
 
 <p>
@@ -215,25 +216,25 @@ further arguments in favor of this requirement.
 <p>
 That's it, we have set out 5 requirements for how our AI should operatore
 internally, and that is enough to completely determine the algorithm that
-our AI will use to calculate belief values for every problem it could
-encounter. For more information on this result, known as Cox's Theorem, see van Horn's awesome
-paper.
+our AI will use to calculate belief values for nearly every kind of
+proposition it could encounter. For more information on this result, known
+as Cox's Theorem, see van Horn's awesome paper.
 </p>
 
 <p>
 Without going into the proof, it turns out that that the function B can be
 rescaled so that B(T) = 1 and B(F) = 0, matching the usual mapping of 1 to
-true propositions, and 0 to false propositions.  It can also be shown that
-the following two rules hold:
+true propositions, and 0 to false propositions.  It can also be shown that B
+can be formulated so that the following two rules hold:
 </p>
 
 <p>
-The sum rule:
+<strong>The sum rule</strong>:
 B(-A | I) = 1 - B(A | I)
 </p>
 
 <p>
-The product rule:
+<strong>The product rule</strong>:
 B(A ^ C | I) = B(A | C, I) B(C | I)
 </p>
 
@@ -260,6 +261,7 @@ Finally, by dividing both sides by B(C | I), we have the Bayes'-Laplace Rule
 </p>
 
 <p>
+<strong>Bayes' Rule</strong>:
 B(A | C, I) = [ B(C | A, I) B(A | I) ] / B(C | I)
 </p>
 
@@ -286,10 +288,11 @@ often ignored since we are usually only interested in choosing a good hypothesis
 
 <p>
 One of the reasons that Bayes' Rule is so celebrated is because it precisely
-describes the scientific method--the idea that we should use data to update
-our beliefs about a hypothesis. Because of this simple equation our AI has
-almost unlimited applicability, since so many problems that we encounter can
-be described as 'updating a hypothesis in light of the data'.
+describes the scientific method--the idea that we must use data to update
+our beliefs about a hypothesis. From this simple equation our AI gains an
+almost unlimited ability to learn and solve problems, because for almost every
+problem we encounter, the process of finding a solution can be described as
+"updating a hypothesis in light of the data".
 </p>
 
 <p>
@@ -302,3 +305,5 @@ could not be described as a universal law in any meaningful way; it is just
 a highly idealized description of the way humans reason about
 uncertain propositions.
 </p>
+
+<h2>A last word about consistency</h2>
