@@ -2,8 +2,8 @@ body {
     font: 1.3em Georgia,"Times New Roman",Times, serif;
     line-height: 1.3em;
     background-image: url('../img/bg_pixel.png');
-    color: #080000;
-    text-shadow: 0px 1px white;
+    color: #000;
+    /*text-shadow: 0px 1px white;*/
 }
 
 .wrapper {
@@ -15,9 +15,17 @@ body {
 .footer {
     margin-left: -240px;
     margin-right: -240px;
-    height: 150px;
+    height: 100px;
     background-position: top center;
     background-image: url('../img/bg_footer.png')
+}
+
+.header {
+    margin-left: -240px;
+    margin-right: -240px;
+    height: 31px;
+    background-position: top center;
+    background-image: url('../img/bg_header.png')
 }
 
 .text-wrapper {
@@ -28,18 +36,18 @@ body {
 .commentable-container {
     margin: 0px 0px 0px 20px;
     padding: 20px 20px 20px 24px;
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 .comment-button {
     position: absolute;
     top: 0px;
-    left: -44px;
+    left: -84px;
     width: 20px;
     z-index: 999;
 }
 .comment-button:hover {
     /*background-image:url('../img/bubble.png');*/
-    background-color: #f0f0f0;
+    background-color: #fff;
     cursor: pointer;
 }
 
@@ -52,7 +60,7 @@ body {
     color: #896570;
     font-size: 1.7em;
     margin: .60em;
-    border-bottom:2px solid #1a1a1a;
+    border-bottom:2px solid #7f7f7f;
     padding-bottom: .7em;
     text-shadow:  0px -1px black, 0px 1px white;
     line-height: 110%;
@@ -65,28 +73,24 @@ body {
     padding-top: .5em;
 }
 .commentable-container p {
-    /*margin: 10px 40px 10px 40px;*/
+    margin: 10px 40px 10px 40px;
     padding-bottom: 0.9em;
 /*    text-indent:20px;*/
 }
     
-a, a > u { 
-	text-decoration: none; 
-}
+a, a > u { text-decoration: none; }
 
 a:link    { font-weight: bold; color: #6374AB; } 
 /*a:visited { color: #511ca0; }
 a:hover   { color: #ff0080; }*/
 
-#form-controls {
-    margin-top: 5px;
-}
+#form-controls { margin-top: 5px; }
 
 #id_comment {
   width:98%;
   height: 130px;
   background:none repeat scroll 0 0 #FFFFFF;
-  border:3px solid #6374AB;
+  border:1px solid #6374AB;
   font-size:12px;
   padding:3px;
   margin-bottom: 8px;
@@ -94,7 +98,7 @@ a:hover   { color: #ff0080; }*/
 
 #id_name {
     background:none repeat scroll 0 0 #FFFFFF;
-    border:3px solid #6374AB;
+    border:1px solid #6374AB;
     font-size:12px;
     padding:3px;
     margin-top: 1px; 
@@ -108,11 +112,14 @@ position:relative;
 top:-3pt;
 }
 
-li {margin:auto;
-width:80%;
-padding: 3px 10px 3px 10px;
-border: 3px solid #f0f0f0;
-background-color:#d0d0d0;
+li { 
+    margin:auto;
+    width:80%;
+    padding: 3px 10px 3px 10px;
+    border: 3px solid #fff;
+    background-color:#727272;
+    color: white;
+    text-shadow: 0px 1px 1px black;
 }
 
 
