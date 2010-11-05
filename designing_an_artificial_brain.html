@@ -13,41 +13,42 @@ you know.  A is true, and A implies B, therefore B is true.  Here A and B are
 even if we have no way of knowing which of the two they are.
 </p>
 
-<p>However, the vast majority of decisions that we need to make depend on
-propositions that we cannot judge to be definitively true or false given the
-information at hand.  Is it going to rain today?  Will I get sick if I don't
-get a flu vaccine?  Will the stock market go up or down in six months? If we
-knew the answers to these questions ahead of time, even approximately, it
-would enable us to make better decisions.
+<p>However, most decisions that we need to make depend
+on propositions that can't be judged true or false given the information at
+hand.  Is it going to rain today?  Will I get sick if I don't get a flu
+vaccine?  Will the stock market go up or down in six months? If we knew the
+answers to these questions ahead of time, even approximately, it would
+allow us to make better decisions.
 </p>
 
 <p>Is it possible then, to design an artificial intelligence (an AI) to help us
 reason about uncertain propositions in some sort of optimal way?  In order
 to begin, we would first need to come up with a relatively satisfying
-definition of 'optimal'.  At first one might hope to design an AI that
-is correct more often than any other AI that could be designed.  As far
-as I know this has not been done, but there has been progress towards
+definition of 'optimal'.  At first one might hope for an AI that
+that provides some sort of guarantee of the correctness of the answers it provides.  As far
+as I know this hasn't been done (after all, we are dealing
+with <em>uncertain</em> propositions), but there has been progress towards
 satisfying the following 4 criteria:
 </p>
 
 <ol>
 <li>
-1). Universality: we would like our AI to be able to provide answers to a
+Universality: we would like our AI to be able to provide answers to a
 wide variety of questions.
 </li>
 
 <li>
-2). Simplicity: as a practical matter, a simple design is easier to understand and implement.
+Simplicity: as a practical matter, a simple design is easier to understand and implement.
 </li>
 
 <li>
-3). Agrees with our intuition: I can't be more precise about this until
-later, when I get into the details of the design of our AI, but don't worry,
-I will be very specific when I invoke this requirement.
+Agrees with our intuition: I can't be more precise about this until I get
+into the details of our AI's internals, but don't worry, I will be very
+specific when I invoke this requirement.
 </li>
 
 <li>
-4). Consistency: we would like for our AI to give us the same answer
+Consistency: we would like for our AI to give us the same answer
 every time we ask it a specific question.
 </li>
 </ol>
@@ -65,21 +66,21 @@ disadvantage.
 
 <p>
 This may seem strange, since normally if we are designing a machine to
-evaluate propositions then a lack of consistency is an indication of a
+evaluate propositions a lack of consistency is an indication of a
 serious error.  For example, if you had a calculator that gave a different
 answer every time you typed in '2308 * 5982' then (even not knowing the
-answer yourself) you could tell there is something wrong with the
+answer yourself) you would be able to tell there is something wrong with the
 calculator, since there is only one number equal to 2308 * 5982, and it can
 be determined based on the given data.
 </p>
 
 <p>
 However, imagine that the purpose of your calculator was to determine the
-mass of Saturn based on a series of astronomical observations. In this case,
+mass of Saturn based on a series of astronomical observations. In that case,
 we can't say that something is wrong with the calculator because it doesn't
-output the same answer every time we ask, even if we provide it with the
-exact same data each time, since (hypothetically) the data given to the
-calculator is not sufficient to determine the actual mass of Saturn.
+output the same answer every time we input the same exact data since
+(in the context of this example) the data given to the calculator is not sufficient to
+determine the actual mass of Saturn.
 </p>
 
 <p>
@@ -103,7 +104,7 @@ the negation of that statement, 'it is not going to rain today'.
 
 <p>
 This suggests one way to design our AI. Given an uncertain proposition A
-which it must decide on and some data D related to A, it could attach a real
+which the AI must decide on and some data I related to A, the AI could attach a real
 number to A, and another real number to the negation of A, -A.  Since this
 idea is inspired by the way humans assign levels of belief to uncertain
 propositions, we will call the first number B(A | I), which you can
@@ -112,7 +113,7 @@ I).  If B(A | I) >= B(-A | I), then the AI's output will be 'A is true', and
 otherwise 'A is false'.  As you can see, the robot displays a preference for
 the original proposition A when the beliefs are equal. We could just as
 easily have had things the other way, but since the robot must make some
-decision we might as well choose on arbitrarily (here you can see the
+decision we might as well choose one arbitrarily (here you can see the
 consistency issue already begin to rear its head).
 </p>
 
@@ -120,9 +121,9 @@ consistency issue already begin to rear its head).
 It is important to understand the following point: the AI's level of belief
 B(A | I) in the proposition A is only a description of the AI's internal
 state; it has no significance beyond the internals of our AI.  It is not
-a statement about the true nature of A, nor is it a statement about the long
-term frequence of A being true in repeated trials, whatever that would mean.
-It is merely a description of the AI's internals, any attempt to attach
+a statement about the true nature of the proposition A, nor is it a statement about the long
+term frequency of A being true in repeated trials, whatever that would mean.
+It is merely a description of the AI's internals; any attempt to attach
 additional significance to it will only result in confusion.
 </p>
 
@@ -131,14 +132,7 @@ It is also worth mentioning that this is not the only way to design such an
 AI; instead of attaching one real number to a given proposition we could
 attach several, or we could imagine some other mechanism which doesn't
 involve numbers at all.  This idea merely suggests itself to us because it
-is simple, and it is similar to the way we think.
-</p>
-
-<p>
-Also, as far as I know, there is also no proof that this design will result
-in an AI that provides correct answers more often than any other method
-(although I don't deny that some kind of proof might be possible; I just
-haven't seen one yet).
+is simple, and it is similar to the way we humans think.
 </p>
 
 <p>
@@ -148,14 +142,14 @@ principles for the internals of our AI, starting with the principle just mention
 </p>
 
 <p>
-D1) Given a proposition A and some data D, the AI will assign a real number
+D1) Given a proposition A and some background information I, the AI will assign a real number
 B(A | I).  This is similar to the way that humans reason about uncertain
 propositions.
 </p>
 
 <p>
-D2) There exists some real number T such that B(A | I) <= T for every D and
-A.  If A is known to be true, then the AI should assign B(A | I) = T.
+D2) There exists some real number T such that B(A | I) <= T for every A and
+I.  If A is known to be true, then the AI should assign B(A | I) = T.
 </p>
 
 <p>
@@ -169,7 +163,7 @@ D3) The assignment of beliefs is compatible with everyday logic.
 </p>
 
 <p>
-This is part of our 3rd design principle; the AI must make act in a way that
+This is part of our 3rd criterium; the AI must assign beliefs to propositions in a way that
 agrees with our intuition. For example, if A and A' are equivalent
 propositions then the AI should assign equal levels of belief to A and A',
 so that B(A | I) = B(A' | I).  There are some other requirements here, but
@@ -184,7 +178,7 @@ Define F = S(T).
 <p>
 This also is meant to agree with our intution.  In simple English, it means
 that if some new data causes the AI to assign a higher level of belief to A,
-then it's level of belief in -A should not increase as well.
+then it's level of belief in the negation of A should not increase as well.
 </p>
 
 <p>
@@ -198,8 +192,8 @@ correct, see van Horn for details).
 The primary justification for this requirement is that it appeals to our
 intuition, since we humans do not think of levels of belief as being finite
 and discrete, we think of them as being continuous. It is not natural to
-imagine that given some data D for A, and some more convincing data D' for
-A, there is not some intermediate data that would allow the AI to have
+imagine that given some information I related to A, and some more favorable information I' for
+A, there is not some intermediate level of information I'' that would allow the AI to have
 B(A | I) < B(A | I'') < B(A | I')
 </p>
 
@@ -222,7 +216,7 @@ further arguments in favor of this requirement.
 That's it, we have set out 5 requirements for how our AI should operatore
 internally, and that is enough to completely determine the algorithm that
 our AI will use to calculate belief values for every problem it could
-encounter. For more information on this result, see van Horn's awesome
+encounter. For more information on this result, known as Cox's Theorem, see van Horn's awesome
 paper.
 </p>
 
@@ -287,23 +281,24 @@ traditionally the <strong>likelihood</strong>, it assigns a number to the degree
 hypothesis is supported by the data.  B(hypothesis | I) is the <strong>prior</strong>, it
 shows our AI's belief in the hypothesis <em>before</em> viewing the data.  B(data |
 I) is simply a constant which does not depend on the hypothesis, so it is
-usually ignored, since we are usually interested in choosing a good hypothesis.
+often ignored since we are usually only interested in choosing a good hypothesis.
 </p>
 
 <p>
-The reason that Bayes' Rule is so celebrated is because it precisely
-expresses the scientific method--the idea that we should use data to update
-our beliefs about a hypothesis. It means that our AI has almost unlimited
-applicability, since so many problems that we encounter can be described as
-'updating a hypothesis in light of the data'.
+One of the reasons that Bayes' Rule is so celebrated is because it precisely
+describes the scientific method--the idea that we should use data to update
+our beliefs about a hypothesis. Because of this simple equation our AI has
+almost unlimited applicability, since so many problems that we encounter can
+be described as 'updating a hypothesis in light of the data'.
 </p>
 
 <p>
 It is worth reiterating an earlier point; there is no claim here that this
 is the only way to reason about uncertain propositions, or even the best
-way. It is merely an simple, widely applicable, and intuitively appealing
+way. It is merely a simple, widely applicable, and intuitively appealing
 way for humans (and machines designed by humans) to make decisions.  While
-the design just shown is elegant and highly appealing in its own right, it
+Bayes' Rule is elegant and highly appealing in its own right, it
 could not be described as a universal law in any meaningful way; it is just
-a highly idealized description of the way humans think.
+a highly idealized description of the way humans reason about
+uncertain propositions.
 </p>
