@@ -1,5 +1,5 @@
 body {
-    font: 1.15em Georgia,"Times New Roman",Times, serif;
+    font: 11pt Georgia,"Times New Roman",Times, serif;
     line-height: 1.3em;
     background-image: url('../img/bg_pixel.png');
     color: #000;
@@ -131,7 +131,6 @@ top:-4pt;
 }
 
 
-ol { color: black;}
 li { 
     margin:auto;
     width:80%;

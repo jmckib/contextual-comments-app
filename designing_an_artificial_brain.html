@@ -107,12 +107,12 @@ This suggests one way to design our AI. Given an uncertain proposition <i>A</i>
 which the AI must decide on and some background information <i>I</i> related to <i>A</i>,
 the AI could assign a real number to <i>A</i>, called <i>B(A | I)</i>, which you can
 pronounce "the AI's belief in proposition <i>A</i> given background information <i>I</i>".
-The AI could also assign a real number to the negation of <i>A, -A</i>, which we
-would call <i>B(-A | I)</i>.
+The AI could also assign a real number to the negation of <i>A, &minus;A</i>, which we
+would call <i>B(&minus;A | I)</i>.
 </p>
 
 <p>
-If <i>B(A | I) ≥ B(-A | I)</i>, then the AI's output will be "<i>A</i> is true", and
+If <i>B(A | I) ≥ B(&minus;A | I)</i>, then the AI's output will be "<i>A</i> is true", and
 otherwise "<i>A</i> is false".  As you can see, the AI displays a preference for
 the original proposition <i>A</i> when the beliefs are equal. We could just as
 easily have had things the other way, but since the AI must make some
@@ -151,7 +151,7 @@ propositions.
 </p>
 
 <p>
-D2) There exists some real number <i>T</i> such that <i>B(A | I) ≤ T</i> for every <i>A</i> and
+D2) There exists some real number <i>T</i> such that <i>B(A | I) &le; T</i> for every <i>A</i> and
 I.  If <i>A</i> is known to be true, then the AI should assign <i>B(A | I) = T</i>.
 </p>
 
@@ -174,7 +174,7 @@ they are all similarly straightforward, see Kevin van Horn for details.
 </p>
 
 <p>
-D4) There is a nonincreasing function <i>S</i> such that <i>S(B(A | I)) = B(-A | I)</i>.
+D4) There is a nonincreasing function <i>S</i> such that <i>S(B(A | I)) = B(&minus;A | I)</i>.
 Define <i>F = S(T)</i>.
 </p>
 
@@ -214,7 +214,7 @@ further arguments in favor of this requirement.
 <h2>Bayes' Rule</h2>
 
 <p>
-That's it, we have set out 5 requirements for how our AI should operatore
+That's it, we have set out 5 requirements for how our AI should operate
 internally, and that is enough to completely determine the algorithm that
 our AI will use to calculate belief values for nearly every kind of
 proposition it could encounter. For more information on this result, known
@@ -230,12 +230,12 @@ can be formulated so that the following two rules hold:
 
 <p>
 <strong>The sum rule</strong>:
-<i>B(-A | I) = 1 - B(A | I)</i>
+<i>B(&minus;A | I) = 1 &minus; B(A | I)</i>
 </p>
 
 <p>
 <strong>The product rule</strong>:
-<i>B(A<a id="sp3">C</a> | I) = B(A | C, I) · B(C | I)</i>
+<i>B(A<a>C</a> | I) = B(A | C, I) · B(C | I)</i>
 </p>
 
 <p>
@@ -262,17 +262,17 @@ Finally, by dividing both sides by <i>B(C | I)</i>, we have the Bayes'-Laplace R
 
 <p>
 <strong>Bayes' Rule</strong>:
-<i>B(A | C, I) = <a id="sp1">B(C | A, I) · B(A | I)</a> <a id="sp2">B(C | I)</a></i>
+<center>
+<img class="tex" alt="B(A \,|\, C,\, I) = {B(C\, |\, A,\, I) \cdot B(A \,|\, I)\over B(C\, |\, I)}" src="../img/latex-image-1.png">
+</center>
 </p>
 
 <p>
 If we let <i>A</i> be our hypothesis, and <i>C</i> be the data we have collected
 concerning the hypothesis, then we can see the true power of Bayes' rule.
-</p>
-
-<p>
-<i>B(hypothesis | data, I) = <a id="sp1">
-	B(data | hypothesis, I) · B(hypothesis | I)</a> <a id="sp2-1"> B(data | I)</a></i>
+<center>
+<img class="tex" alt="B(hypothesis\, |\, data,\, I)\, =\, {B(data\, | \,hypothesis,\, I)\,\cdot\, B(hypothesis \,|\, I) \over B(data \,|\, I)}" src="../img/latex-image-2.png">
+</center>
 </p>
 
 <p>
