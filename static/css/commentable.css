@@ -1,5 +1,5 @@
 body {
-    font: 1.3em Georgia,"Times New Roman",Times, serif;
+    font: 1.15em Georgia,"Times New Roman",Times, serif;
     line-height: 1.3em;
     background-image: url('../img/bg_pixel.png');
     color: #000;
@@ -41,7 +41,7 @@ body {
 .comment-button {
     position: absolute;
     top: 0px;
-    left: -84px;
+    left: -94px;
     width: 20px;
     z-index: 999;
 }
@@ -57,12 +57,12 @@ body {
 
 .commentable-container h1 {
     text-align:left;
-    color: #896570;
+    color: #791010;
     font-size: 1.7em;
     margin: .60em;
-    border-bottom:2px solid #7f7f7f;
+    border-bottom:1px solid #7f7f7f;
     padding-bottom: .7em;
-    text-shadow:  0px -1px black, 0px 1px white;
+/*    text-shadow:  0px -1px black, 0px 1px white;*/
     line-height: 110%;
 }
 
@@ -73,7 +73,7 @@ body {
     padding-top: .5em;
 }
 .commentable-container p {
-    margin: 10px 40px 10px 40px;
+    margin: 10px 50px 10px 50px;
     padding-bottom: 0.9em;
 /*    text-indent:20px;*/
 }
@@ -90,7 +90,8 @@ a:hover   { color: #ff0080; }*/
   width:98%;
   height: 130px;
   background:none repeat scroll 0 0 #FFFFFF;
-  border:1px solid #6374AB;
+  border:1px solid #bbb;
+/*  -moz-box-shadow: 0px 1px 5px #eee;*/
   font-size:12px;
   padding:3px;
   margin-bottom: 8px;
@@ -98,7 +99,8 @@ a:hover   { color: #ff0080; }*/
 
 #id_name {
     background:none repeat scroll 0 0 #FFFFFF;
-    border:1px solid #6374AB;
+    border:1px solid #bbb;
+/*    -moz-box-shadow: 0px 1px 5px #eee;*/
     font-size:12px;
     padding:3px;
     margin-top: 1px; 
@@ -107,19 +109,37 @@ a:hover   { color: #ff0080; }*/
 }
 
 .sp3, #sp3 {
-font-size:11pt;
+font-size:8pt;
 position:relative;
-top:-3pt;
+top:-4pt;
+}
+.sp1, #sp1{
+    text-decoration:underline;
+    position: relative;
+    bottom: 4pt;
+    left: 4pt;
+}
+.sp2, #sp2{
+    position: relative;
+    top: 7pt;
+    right: 65pt;
+}
+.sp2-1, #sp2-1{
+    position: relative;
+    top: 7pt;
+    right: 130pt;
 }
 
+
+ol { color: black;}
 li { 
     margin:auto;
     width:80%;
     padding: 3px 10px 3px 10px;
     border: 3px solid #fff;
-    background-color:#727272;
+    background-color:#777;
     color: white;
-    text-shadow: 0px 1px 1px black;
+    text-shadow: 0px 1px 2px black;
 }
 
 

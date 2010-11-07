@@ -61,30 +61,25 @@
     margin: none;
     width: auto;
 }
-.ui-dialog { -moz-box-shadow: 0px 1px 20px gray; }
+.ui-dialog { -moz-box-shadow: 0px 10px 40px rgba(0,0,0,.5) }
 
 /* Component containers
 ----------------------------------*/
-.ui-widget { 
-    font-family: Verdana, Tahoma, Arial, sans-serif; 
-    font-size: 11px; 
+.ui-widget .ui-widget { font-size: 11px; }
+.ui-widget, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { 
+    font-family: Verdana, Tahoma, Arial, sans-serif;  
+    font-size: 10px; 
     text-shadow: none;
 }
-
-.ui-widget .ui-widget { font-size: 12px; }
-.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { 
-    font-family: Tahoma, Verdana, Arial, sans-serif; 
-    font-size: 11px; 
-}
 .ui-widget-content { 
-    border: 1px solid #858e9e; 
-    background: #ebf0f8 /*url(images/bg_commentbox.png) 50% 50% repeat-x*/; 
+    border: 1px solid #777; 
+    background: white; 
     color: #333333; 
 }
 .ui-widget-content a { color: #333333; }
 .ui-widget-header { 
     border: 0px solid #c2e1ff; 
-    background: #858e9e; 
+    background: #791010; 
     color: #000000; 
     font-weight: bold; 
 }
@@ -93,20 +88,19 @@
 /* Interaction states
 ----------------------------------*/
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    border: 2px solid #aab3c1; 
-    background: #aab3c1 /*url(images/ui-bg_glass_10_505560_1x400.png) 50% 50% repeat-x*/;
+    border: 2px solid #ccc; 
+    background: #ccc;
     font-weight: bold; 
-    color: #4e5864; 
+    color: #791010; 
 }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { 
-    color: #4e5864; 
+    color: #791010; 
     text-decoration: none; 
 }
-/*.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #fbae1e; background: #fbae1e; font-weight: bold; color: #fff; }*/
-.ui-state-hover a, .ui-state-hover a:hover { color: #fff; text-decoration: none; }
+.ui-state-hover a, .ui-state-hover a:hover { color: black; text-decoration: none; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { 
-    border: 2px solid #ebf0f8; 
-    background: #ebf0f8 /*url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x*/; 
+    border: 2px solid white; 
+    background: white ; 
     font-weight: bold; 
     color: #222;
 }
@@ -115,11 +109,11 @@
 
 /* Interaction Cues
 ----------------------------------*/
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #fed22f; background: #ffe45c url(images/ui-bg_highlight-soft_75_ffe45c_1x100.png) 50% top repeat-x; color: #363636; }
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #fed22f; background: #ffe45c; color: #363636; }
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #363636; }
-.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #b81900 url(images/ui-bg_diagonals-thick_18_b81900_40x40.png) 50% 50% repeat; color: #ffffff; }
-.ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a { color: #ffffff; }
-.ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text { color: #ffffff; }
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #b81900; color: white; }
+.ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a { color: white; }
+.ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text { color: white; }
 .ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary { font-weight: bold; }
 .ui-priority-secondary, .ui-widget-content .ui-priority-secondary,  .ui-widget-header .ui-priority-secondary { opacity: .7; filter:Alpha(Opacity=70); font-weight: normal; }
 .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }

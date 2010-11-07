@@ -200,7 +200,7 @@ are possible--an awkward assertion in light of everyday experience.
 
 <p>
 D6) There is a strictly increasing, continuous function <i>F</i> such that
-<i>B(A <a id="sp3">C</a> | I) = F(B(A | C, I), B(C | I))</i> for all propositions <i>A</i> and <i>C</i> with
+<i>B(A <a id="sp3">C</a> | I) = F(B(A | C, I) · B(C | I))</i> for all propositions <i>A</i> and <i>C</i> with
 background information <i>I</i>.
 </p>
 
@@ -235,7 +235,7 @@ can be formulated so that the following two rules hold:
 
 <p>
 <strong>The product rule</strong>:
-<i>B(A<a id="sp3">C</a> | I) = B(A | C, I) B(C | I)</i>
+<i>B(A<a id="sp3">C</a> | I) = B(A | C, I) · B(C | I)</i>
 </p>
 
 <p>
@@ -243,7 +243,7 @@ Now if we switch the roles of <i>A</i> and <i>C</i> in the product rule, we have
 </p>
 
 <p>
-<i>B(C <a id="sp3">A</a> | I) = B(C | A, I) B(A | I)</i>
+<i>B(C <a id="sp3">A</a> | I) = B(C | A, I) · B(A | I)</i>
 </p>
 
 <p>
@@ -252,7 +252,7 @@ propositions, so we have that
 </p>
 
 <p>
-<i>B(A | C, I) B(C | I) = B(C | A, I) B(A | I)</i>
+<i>B(A | C, I) · B(C | I) = B(C | A, I) · B(A | I)</i>
 </p>
 
 <p>
@@ -262,7 +262,7 @@ Finally, by dividing both sides by <i>B(C | I)</i>, we have the Bayes'-Laplace R
 
 <p>
 <strong>Bayes' Rule</strong>:
-<i>B(A | C, I) = [ B(C | A, I) B(A | I) ] / B(C | I)</i>
+<i>B(A | C, I) = <a id="sp1">B(C | A, I) · B(A | I)</a> <a id="sp2">B(C | I)</a></i>
 </p>
 
 <p>
@@ -271,8 +271,8 @@ concerning the hypothesis, then we can see the true power of Bayes' rule.
 </p>
 
 <p>
-<i>B(hypothesis | data, I) = 
-	[ B(data | hypothesis, I) B(hypothesis | I) ] / B(data | I)</i>
+<i>B(hypothesis | data, I) = <a id="sp1">
+	B(data | hypothesis, I) · B(hypothesis | I)</a> <a id="sp2-1"> B(data | I)</a></i>
 </p>
 
 <p>
