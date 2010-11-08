@@ -52,12 +52,11 @@ if (typeof Commentable === "undefined") {
                     this.id = 'c' + index;
                     var that = this;
                     $.getJSON('/comments?comcount_req=1&nodenum=' + index, function (data) {
-                        var $comment_button = $('<div class="comment-button"><span>' +
-                                                data.count +
-                                                '</span></div>');
+                        var $comment_button = $('<div class="comment-button"><span></span></div>');
                         if (data.count === 0) {
                             $comment_button.addClass('uncommented');
                         } else {
+                            $comment_button.children('span').html(data.count);
                             $comment_button.addClass('commented');
                         }
                         var left_border = parseInt($(that).css('border-left-width').replace('px', ''));
@@ -82,7 +81,11 @@ if (typeof Commentable === "undefined") {
                         var nodenum = CONFIG.$comment_form.find('input[type="hidden"]').val();
                         var $comment_button = $('#c' + nodenum + ' .comment-button');
                         var $span = $comment_button.children('span');
-                        $span.html(parseInt($span.html()) + 1);
+                        if ($span.html() === "") {
+                            $span.html(1);
+                        } else {
+                            $span.html(parseInt($span.html()) + 1);
+                        }
                         if (parseInt($span.html()) >= 0) {
                             $comment_button.removeClass('uncommented');
                             $comment_button.addClass('commented');
