@@ -41,7 +41,6 @@ body {
 .comment-button {
     position: absolute;
     top: 0px;
-    left: -94px;
     width: 20px;
     z-index: 999;
 }
@@ -130,8 +129,11 @@ top:-4pt;
     right: 130pt;
 }
 
+center {
+    position: relative;
+}
 
-li { 
+li {
     margin:auto;
     width:80%;
     padding: 3px 10px 3px 10px;
@@ -139,6 +141,7 @@ li {
     background-color:#777;
     color: white;
     text-shadow: 0px 1px 2px black;
+    position: relative;
 }
 
 

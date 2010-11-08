@@ -4,7 +4,10 @@ if (typeof Commentable === "undefined") {
     $(function () {
         Commentable = (function () {
             var CONFIG = {
-                $commentables: $('.commentable-container > p').not('.nocom'),
+                $container: $('.commentable-container'),
+                // NOTE: commentable elements must have position: relative,
+                // but the default position is static
+                $commentables: $('.commentable-container > p, center').add('.commentable-container li').not('.nocom'),
                 $comment_dialog: $('#comment-form-tabs'),
                 $comment_form: $('#comment-form'),
                 $comment_error_div: $('#comments-error-message'),
@@ -35,9 +38,13 @@ if (typeof Commentable === "undefined") {
                 };
             };
             var add_comment_boxes = function () {
+                var container_left = CONFIG.$container.offset().left,
+                container_left_margin = parseInt(CONFIG.$container.css('marginLeft').replace('px', ''));
                 CONFIG.$commentables.each(function (index) {
                     this.id = 'c' + index;
-                    var $comment_button = $('<div class="' + CONFIG.comment_btn_cls + '"></div>')
+                    var $comment_button = $('<div class="' + CONFIG.comment_btn_cls + '"></div>');
+                    var left_border = parseInt($(this).css('border-left-width').replace('px', ''));
+                    $comment_button.css('left', (container_left - container_left_margin) - (parseInt($(this).offset().left) + left_border));
                     $comment_button.css('height', $(this).css('height'));
                     $(this).append($comment_button);
                     $comment_button.click(open_dialog_func(index));
