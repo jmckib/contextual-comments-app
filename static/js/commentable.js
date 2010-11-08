@@ -42,12 +42,23 @@ if (typeof Commentable === "undefined") {
                 container_left_margin = parseInt(CONFIG.$container.css('marginLeft').replace('px', ''));
                 CONFIG.$commentables.each(function (index) {
                     this.id = 'c' + index;
-                    var $comment_button = $('<div class="' + CONFIG.comment_btn_cls + '"></div>');
-                    var left_border = parseInt($(this).css('border-left-width').replace('px', ''));
-                    $comment_button.css('left', (container_left - container_left_margin) - (parseInt($(this).offset().left) + left_border));
-                    $comment_button.css('height', $(this).css('height'));
-                    $(this).append($comment_button);
-                    $comment_button.click(open_dialog_func(index));
+                    var that = this;
+                    $.getJSON('/comments?comcount_req=1&nodenum=' + index, function (data) {
+                        var $comment_button = $('<div class="' +
+                                                CONFIG.comment_btn_cls +
+                                                '"><span>' + data.count +
+                                                '</span></div>');
+                        if (data.count === 0) {
+                            $comment_button.addClass('uncommented');
+                        } else {
+                            $comment_button.addClass('commented');
+                        }
+                        var left_border = parseInt($(that).css('border-left-width').replace('px', ''));
+                        $comment_button.css('left', (container_left - container_left_margin) - (parseInt($(that).offset().left) + left_border));
+                        $comment_button.css('height', $(that).css('height'));
+                        $(that).append($comment_button);
+                        $comment_button.click(open_dialog_func(index));
+                    });
                 });
             };
             return {
@@ -61,7 +72,15 @@ if (typeof Commentable === "undefined") {
                     }
                     CONFIG.$comment_error_div.html("loading...");
                     $.post('/comments', CONFIG.$comment_form.serialize(), function () {
-                        CONFIG.$comment_dialog.tabs('select', CONFIG.allcomments_tab_id)
+                        var nodenum = CONFIG.$comment_form.find('input[type="hidden"]').val();
+                        var $comment_button = $('#c' + nodenum + ' .comment-button');
+                        var $span = $comment_button.children('span');
+                        $span.html(parseInt($span.html()) + 1);
+                        if (parseInt($span.html()) >= 0) {
+                            $comment_button.removeClass('uncommented');
+                            $comment_button.addClass('commented');
+                        }
+                        CONFIG.$comment_dialog.tabs('select', CONFIG.allcomments_tab_id);
                         reset_comments_form();
                         CONFIG.$comment_error_div.html("Comment submitted");
                     });

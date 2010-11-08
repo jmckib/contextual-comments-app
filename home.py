@@ -1,4 +1,5 @@
 import logging
+from django.utils import simplejson
 import os
 
 from google.appengine.ext import db
@@ -28,11 +29,16 @@ class CommentHandler(webapp.RequestHandler):
         """Load all comments for a page and block index"""
         block_index = int(self.request.get('nodenum'))
         page = self.request.headers['Referer']
+        if self.request.get('comcount_req'):
+            count = (Comment.all()
+                     .filter("page = ", page)
+                     .filter("block_index = ", block_index)
+                     .count())
+            self.response.out.write(simplejson.dumps({'count': count}))
+            return
         query = Comment.all().filter("page = ", page).filter("block_index = ", block_index).order('-datetime')
-        logging.info("Return query = %s" % [result.comment for result in query])
         path = os.path.join(os.path.dirname(__file__), 'comments.html')
         self.response.out.write(template.render(path, {'comments': query}))
-        # self.response.out.write("page %s, index %d" % (page, block_index))
 
 class MainPage(webapp.RequestHandler):
     def get(self):
