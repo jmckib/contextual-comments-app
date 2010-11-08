@@ -52,7 +52,7 @@ if (typeof Commentable === "undefined") {
                     this.id = 'c' + index;
                     var that = this;
                     $.getJSON('/comments?comcount_req=1&nodenum=' + index, function (data) {
-                        var $comment_button = $('<div class=".comment-button"><span>' +
+                        var $comment_button = $('<div class="comment-button"><span>' +
                                                 data.count +
                                                 '</span></div>');
                         if (data.count === 0) {
