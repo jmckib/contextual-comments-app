@@ -15,7 +15,7 @@ if (typeof Commentable === "undefined") {
                 $comment_text_input: $('textarea[name=comment]'),
                 $name_input: $('input[name=name]'),
                 $allcomments_link: $('#allcomments-link'),
-                comment_btn_cls: 'comment-button',
+                postcomments_tab_id: 0,
                 allcomments_tab_id: 1
             };
             var reset_comments_form = function() {
@@ -23,6 +23,9 @@ if (typeof Commentable === "undefined") {
                 CONFIG.$comment_text_input.val('');
                 CONFIG.$name_input.val('');
             }
+            var get_num_comments = function (block_index) {
+                return  parseInt($('#c' + block_index + ' .comment-button > span').html());
+            };
             var open_dialog_func = function(block_index) {
                 return function () {
                     // destroy tabs, change ajax links, and recreate
@@ -31,7 +34,12 @@ if (typeof Commentable === "undefined") {
                     CONFIG.$comment_index_input.val(block_index);
                     CONFIG.$allcomments_link.attr('href', 'comments?nodenum=' + block_index)
                     CONFIG.$comment_dialog.tabs();
-                    CONFIG.$comment_dialog.tabs('select', CONFIG.allcomments_tab_id)
+                    var num_comments = get_num_comments(block_index);
+                    if (num_comments > 0) {
+                        CONFIG.$comment_dialog.tabs('select', CONFIG.allcomments_tab_id);
+                    } else {
+                        CONFIG.$comment_dialog.tabs('select', CONFIG.postcomments_tab_id);
+                    }
                     // reposition dialog and open
                     CONFIG.$comment_dialog.dialog( "option", "position", 'center' );
                     CONFIG.$comment_dialog.dialog('open');
@@ -44,9 +52,8 @@ if (typeof Commentable === "undefined") {
                     this.id = 'c' + index;
                     var that = this;
                     $.getJSON('/comments?comcount_req=1&nodenum=' + index, function (data) {
-                        var $comment_button = $('<div class="' +
-                                                CONFIG.comment_btn_cls +
-                                                '"><span>' + data.count +
+                        var $comment_button = $('<div class=".comment-button"><span>' +
+                                                data.count +
                                                 '</span></div>');
                         if (data.count === 0) {
                             $comment_button.addClass('uncommented');
