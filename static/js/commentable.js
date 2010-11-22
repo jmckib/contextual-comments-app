@@ -48,21 +48,25 @@ if (typeof Commentable === "undefined") {
             var add_comment_boxes = function () {
                 var container_left = CONFIG.$container.offset().left,
                 container_left_margin = parseInt(CONFIG.$container.css('marginLeft').replace('px', ''));
-                CONFIG.$commentables.each(function (index) {
-                    this.id = 'c' + index;
-                    var that = this;
-                    $.getJSON('/comments?comcount_req=1&nodenum=' + index, function (data) {
+                $.getJSON('/comments?comcount_req=t', function (data) {
+                    CONFIG.$commentables.each(function (index) {
+                        this.id = 'c' + index;
+                        count = data.counts[index]
                         var $comment_button = $('<div class="comment-button"><span></span></div>');
-                        if (data.count === 0) {
+                        if (count === undefined) {
                             $comment_button.addClass('uncommented');
                         } else {
-                            $comment_button.children('span').html(data.count);
                             $comment_button.addClass('commented');
                         }
-                        var left_border = parseInt($(that).css('border-left-width').replace('px', ''));
-                        $comment_button.css('left', (container_left - container_left_margin) - (parseInt($(that).offset().left) + left_border));
-                        $comment_button.css('height', $(that).css('height'));
-                        $(that).append($comment_button);
+                        $this = $(this)
+                        var left_border = parseInt($this.css('border-left-width').replace('px', ''));
+                        $comment_button.css('left', (container_left - container_left_margin) - (parseInt($this.offset().left) + left_border));
+                        $comment_button.css('height', $this.css('height'));
+                        // Add count later, so bubble image will be loaded by then
+                        if (count !== undefined) {
+                            $comment_button.children('span').html(count);
+                        }
+                        $this.append($comment_button);
                         $comment_button.click(open_dialog_func(index));
                     });
                 });
