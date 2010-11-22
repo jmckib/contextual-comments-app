@@ -77,14 +77,31 @@ body {
 }
 
 .commentable-container h1 {
+    float: left;
     text-align:left;
     color: #791010;
     font-size: 1.7em;
     margin: .60em;
-    border-bottom:1px solid #7f7f7f;
     padding-bottom: .7em;
-/*    text-shadow:  0px -1px black, 0px 1px white;*/
     line-height: 110%;
+    margin-bottom: 0px;
+}
+
+.title-box {
+    border-bottom:1px solid #7f7f7f;
+}
+
+.authors {
+    margin-top: 20px;
+    font: 11pt Georgia,"Times New Roman",Times, serif;
+    text-align: right;
+    float: right;
+    display: inline;
+}
+
+.authors a:link {
+    font-weight: bold;
+    color: steelBlue;
 }
 
 .commentable-container h2 {
