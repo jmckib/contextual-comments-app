@@ -7,7 +7,7 @@ if (typeof Commentable === "undefined") {
                 $container: $('.commentable-container'),
                 // NOTE: commentable elements must have position: relative,
                 // but the default position is static
-                $commentables: $('.commentable-container > p, center').add('.commentable-container li').not('.nocom'),
+                $commentables: $('.commentable-container > p, center, ol').not('.nocom'),
                 $comment_dialog: $('#comment-form-tabs'),
                 $comment_form: $('#comment-form'),
                 $comment_error_div: $('#comments-error-message'),
