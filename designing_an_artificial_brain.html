@@ -28,7 +28,7 @@ allow us to make better decisions.
 </p>
 
 <p>Is it possible then, to design an artificial intelligence (an AI) to help us
-reason about uncertain propositions in some sort of optimal way?  In order
+reason about uncertain propositions in an optimal way?  In order
 to begin, we would first need to come up with a relatively satisfying
 definition of "optimal".  At first one might hope for an AI that
 that provides some sort of guarantee of the correctness of the answers it provides.  As far
@@ -84,7 +84,7 @@ be determined based on the given data.
 However, imagine that the purpose of your calculator was to determine the
 mass of Saturn based on a series of astronomical observations. In that case,
 we can't say that something is wrong with the calculator because it doesn't
-output the same answer every time we input the same exact data since
+output the same answer every time we input the same exact data, since
 (in the context of this example) the data given to the calculator is not sufficient to
 determine the actual mass of Saturn.
 </p>
@@ -93,8 +93,8 @@ determine the actual mass of Saturn.
 However, there is at least one practical reason to desire consistency;
 debugging our AI will be easier when we know exactly what response to expect
 from it based on a given input.  So although I will not stress the
-importance of consistency, I will mention in passing how we can ensure that our
-AI will provide consistent answers, at least for debugging purposes.
+importance of consistency, I will mention in passing how we can ensure that
+our AI will provide consistent answers, at least for debugging purposes.
 </p>
 
 <h2>
@@ -114,8 +114,7 @@ which the AI must decide on and some background information <i>I</i> related to 
 the AI could assign a real number to <i>A</i>, called <i>B(A | I)</i>, which you can
 pronounce "the AI's belief in proposition <i>A</i> given background information <i>I</i>".
 The AI could also assign a real number to the negation of <i>A, &minus;A</i>, which we
-would call <i>B(&minus;A | I)</i>.  Lastly, <i>B(A, C | I)</i>
-stands for "the AI's belief in both <i>A</i> and <i>C</i>".
+would call <i>B(&minus;A | I)</i>.
 </p>
 
 <p>
@@ -213,7 +212,8 @@ in a proposition--an awkward assertion in light of everyday experience.
 <p>
 D6) There is a strictly increasing, continuous function <i>F</i> such that
 <i>B(A, C | I) = F(B(A | C, I) · B(C | I))</i> for all propositions <i>A</i> and <i>C</i> with
-background information <i>I</i>.
+background information <i>I</i>. Here <i>B(A, C | I)</i> stands for "the
+AI's belief in both <i>A</i> and <i>C</i>, given I".
 </p>
 
 <p>
@@ -330,10 +330,10 @@ uncertain propositions.
   prior?</p>
 
 <p>
-  A common approach is that our AI should select its prior beliefs in a way
-  that expresses total ignorance (though what this means is the subject of
+  A common approach is to select prior beliefs in a way
+  that expresses total ignorance (though what this means has been the subject of
   some debate).  To that end, several guidelines have
-  been developed for selecting ignorant priors:
+  been developed for selecting ignorant priors, such as the
   the <a href="http://en.wikipedia.org/wiki/Principle_of_indifference">Principle
   of Indifference</a> and
   the <a href="http://en.wikipedia.org/wiki/Principle_of_maximum_entropy">Principle
@@ -345,7 +345,7 @@ uncertain propositions.
   same data will assign the same belief values (a useful feature for
   debugging purposes).  However, I haven't encountered an argument
   for why such guidelines give any real advantage in practice; we
-  cannot argue that the AI's belief assignments are more correct for
+  can't argue that the AI's belief assignments are more correct for
   having chosen a prior in one way or another.  This is part of
   a larger problem; there is no guarantee that our AI produces answers
   which reflect the real world at all.</p>
