@@ -13,16 +13,16 @@ body {
 }
 
 .footer {
-    margin-left: -240px;
-    margin-right: -240px;
+    margin-left: -10px;
+    margin-right: -10px;
     height: 100px;
     background-position: top center;
     background-image: url('../img/bg_footer.png')
 }
 
 .header {
-    margin-left: -240px;
-    margin-right: -240px;
+    margin-left: -10px;
+    margin-right: -10px;
     height: 31px;
     background-position: top center;
     background-image: url('../img/bg_header.png')
