@@ -29,7 +29,6 @@ body {
 }
 
 .text-wrapper {
-    /*background-image: url('../img/bg_bg.png');*/
     background-color: #791010;
 }
 
@@ -53,6 +52,9 @@ body {
 
 /* applied to buttons with comments */
 .commented span {
+    color: black;
+    font: 11pt Georgia,"Times New Roman",Times, serif;
+    text-shadow: none;
     position: absolute;
     left: -25px;
     width: 50px;
@@ -61,7 +63,7 @@ body {
 }
 
 .uncommented span {
-    /* maybe a different colored bubble? I can get rid of the 0 */
+    /* maybe a different colored bubble? */
 }
 
 .comment-button:hover {
