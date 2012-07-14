@@ -66,7 +66,7 @@ an answer to many of our questions; if isn't simple it also won't be
 able to provide many answers, because it will be too difficult to implement
 and use; and if it doesn't agree with our intuition then the
 answers it does give us will appear absurd or arbitrary.  However, a lack of
-consistency in the answers it gives us doesn't result in any similar
+consistency in the answers it provides doesn't result in any similar
 disadvantage.
 </p>
 
@@ -191,7 +191,9 @@ Define <i>F = S(T)</i>.
 This also is meant to agree with our intuition.  In simple English, it means
 that if some new data causes the AI to assign a higher level of belief to A,
 then it's level of belief in the negation of <i>A</i> should not increase as
-a result.
+a result.  We could require that the AI's belief in <i>-A</i> should
+actually decrease rather than just not increase, but we are trying to be as
+unrestrictive as possible while still satisfying our original design goals.
 </p>
 
 <p>
@@ -212,7 +214,8 @@ in a proposition--an awkward assertion in light of everyday experience.
 <p>
 D6) There is a strictly increasing, continuous function <i>F</i> such that
 <i>B(A, C | I) = F(B(A | C, I) · B(C | I))</i> for all propositions <i>A</i> and <i>C</i> with
-background information <i>I</i>. Here <i>B(A, C | I)</i> stands for "the
+background information <i>I</i>. Here <i>B(A, C | I)</i> is a real number
+that represents "the
 AI's belief in both <i>A</i> and <i>C</i>, given I".
 </p>
 
@@ -251,7 +254,7 @@ can be formulated so that the following two rules hold:
 
 <p>
 <strong>The product rule</strong>:
-<i>B(A<a>C</a> | I) = B(A | C, I) · B(C | I)</i>
+<i>B(A, C | I) = B(A | C, I) · B(C | I)</i>
 </p>
 
 <p>
@@ -315,7 +318,7 @@ problem we encounter, the process of finding a solution can be described as
 It is worth reiterating an earlier point; there is no claim here that this
 is the only way to reason about uncertain propositions, or even the best
 way. It is merely a widely applicable, simple, and intuitively appealing
-way for humans (and machines designed by humans) to make decisions.  While
+way for humans (and machines designed by humans) to evaluate uncertain propositions.  While
 Bayes' Rule is elegant and highly appealing in its own right, it
 could not be described as a universal law in any meaningful way; it is just
 a highly idealized description of the way humans reason about
@@ -346,12 +349,12 @@ uncertain propositions.
   debugging purposes).  However, I haven't encountered an argument
   for why such guidelines give any real advantage in practice; we
   can't argue that the AI's belief assignments are more correct for
-  having chosen a prior in one way or another.  This is part of
+  having chosen a prior in one way rather than another.  This is part of
   a larger problem; there is no guarantee that our AI produces answers
   which reflect the real world at all.</p>
 
 <p>What I just said may sound overly cynical, but I am only claiming that there has not <em>yet</em>
-  been a proof that a our  AI's beliefs reflect the real world in
+  been a proof that our  AI's beliefs reflect the real world in
   some way.  I am not claiming that there will <em>never</em> be such a proof.  A good argument
   in favor of our third design goal (intuitiveness) is that an AI
   which agrees with intuition stands a good chance of having some
@@ -359,9 +362,9 @@ uncertain propositions.
   years of making decisions under uncertainty.</p>
 
 <p>If you would like to learn more, rather than overwhelm you with a long list of additional reading
-  material I will just recommend one short book, <a href="http://www.amazon.com/Data-Analysis-Bayesian-Tutorial-Publications/dp/0198518897">Data
+  material I will just recommend one short book, <a href="http://www.amazon.com/Data-Analysis-Bayesian-Devinderjit-Sivia/dp/0198568320/ref=sr_1_1?s=books&ie=UTF8&qid=1290438345&sr=1-1">Data
   Analysis: A Bayesian Tutorial</a>.  It is
   full of good examples of Bayes' Rule being put to use in real
   problems, and after reading it you should be able to understand most books
-  and papers on Bayesian' methods, so you can continue to learn on your own.
+  and papers on Bayesian' methods, allowing you to continue to learn on your own.
 </p>
